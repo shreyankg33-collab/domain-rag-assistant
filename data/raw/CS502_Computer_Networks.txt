@@ -1,0 +1,10 @@
+﻿CS502: Computer Networks - Transport Layer Protocols
+
+1. TCP Three-Way Handshake Connection Establishment:
+- Step 1 (SYN): The client sends a SYN segment with an initial client sequence number (ISN_c) to the server.
+- Step 2 (SYN-ACK): The server allocates buffers and sends back a SYN-ACK segment with an acknowledgment number ACK = ISN_c + 1 and its own server sequence number ISN_s.
+- Step 3 (ACK): The client replies with an ACK segment where ACK = ISN_s + 1. The connection is now ESTABLISHED and data transfer begins.
+
+2. TCP vs UDP Protocol Differences:
+- TCP is connection-oriented, provides guaranteed ordered delivery, flow control, and congestion control via a 20-60 byte header.
+- UDP is connectionless, unreliable, and unordered, with a lightweight 8-byte header suitable for real-time gaming, DNS, and VoIP.

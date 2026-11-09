@@ -1,0 +1,14 @@
+﻿CS501: Machine Learning - Unit 1 & 2 Exam Preparation
+
+1. The Bias-Variance Tradeoff:
+Bias represents errors from erroneous assumptions in the model (underfitting). Linear algorithms applied to non-linear datasets exhibit high bias.
+Variance represents sensitivity to small fluctuations in the training dataset (overfitting). Deep, unpruned decision trees typically have high variance.
+Total Expected Generalization Error = Bias^2 + Variance + Irreducible Error.
+
+2. Regularization Methods:
+- L1 Regularization (Lasso): Adds a penalty proportional to absolute weights: lambda * sum(|w|). Drives uninformative feature weights to exactly zero, performing automatic feature selection.
+- L2 Regularization (Ridge): Adds a penalty proportional to squared weights: lambda * sum(w^2). Shrinks weights toward zero without setting them to zero, stabilizing multicollinearity.
+
+3. Activation Functions:
+- ReLU (Rectified Linear Unit): f(x) = max(0, x). Avoids vanishing gradients for positive activations but can suffer from the "Dying ReLU" problem where negative inputs produce zero gradient.
+- Leaky ReLU: f(x) = max(alpha * x, x), where alpha is a small positive constant (0.01) to keep dead neurons learning.
