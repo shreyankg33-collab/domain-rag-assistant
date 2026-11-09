@@ -1,0 +1,25 @@
+CS502: Computer Networks - Transport Layer Protocols
+
+1. OSI vs TCP/IP Models:
+OSI Model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.
+TCP/IP Model has 4 layers: Network Access (Link), Internet (IP), Transport (TCP/UDP), Application (HTTP, DNS, SSH).
+
+2. TCP Three-Way Handshake - Connection Establishment:
+Step 1 SYN: The client sends a SYN segment with its initial sequence number ISN_c to the server.
+Step 2 SYN-ACK: The server responds with SYN-ACK, acknowledging ISN_c (ACK = ISN_c + 1) and sending its own ISN_s.
+Step 3 ACK: The client replies with ACK = ISN_s + 1. The connection is now ESTABLISHED and data transfer begins.
+
+3. TCP Four-Way Handshake - Connection Termination:
+Step 1: Active peer sends FIN segment.
+Step 2: Passive peer sends ACK and enters CLOSE_WAIT state.
+Step 3: Passive peer finishes sending data and sends FIN.
+Step 4: Active peer replies with ACK and enters TIME_WAIT state (2 x MSL) to ensure delivery.
+
+4. TCP vs UDP Protocol Differences:
+TCP: Connection-oriented, reliable, ordered delivery, flow control, congestion control. Header size: 20-60 bytes. Used for HTTP, FTP, SSH.
+UDP: Connectionless, unreliable, unordered, no flow control, no congestion control. Header size: 8 bytes. Used for DNS, VoIP, video streaming, online gaming.
+
+5. Congestion Control in TCP:
+Slow Start: Begins with small congestion window (cwnd=1 MSS), doubles every RTT until threshold.
+Congestion Avoidance: After threshold, increases cwnd by 1 MSS per RTT (linear growth).
+Fast Retransmit: Retransmits lost segment after 3 duplicate ACKs without waiting for timeout.

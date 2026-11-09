@@ -1,0 +1,23 @@
+CS501: Machine Learning - Unit 1 & 2 Exam Preparation
+
+1. Bias-Variance Tradeoff:
+Bias represents errors from erroneous assumptions in the learning algorithm (underfitting). High bias = linear model on non-linear data.
+Variance represents sensitivity to small fluctuations in the training dataset (overfitting). High variance = deep unpruned decision trees.
+Total Expected Generalization Error = Bias^2 + Variance + Irreducible Error.
+
+2. Regularization Methods:
+L1 Regularization (Lasso): penalty = lambda * sum(|w|). Drives uninformative feature weights to exactly zero. Performs automatic feature selection.
+L2 Regularization (Ridge): penalty = lambda * sum(w^2). Shrinks weights toward zero without eliminating them. Handles multicollinearity.
+Elastic Net combines both L1 and L2 penalties using a mixing ratio alpha.
+
+3. Activation Functions:
+ReLU (Rectified Linear Unit): f(x) = max(0, x). Avoids vanishing gradients for positive activations. Suffers from the Dying ReLU problem where negative inputs always produce zero gradient.
+Leaky ReLU: f(x) = max(alpha*x, x) where alpha=0.01. Fixes Dying ReLU by allowing small negative gradients to flow through.
+Sigmoid: f(x) = 1/(1+e^-x). Maps input to (0,1). Suffers from vanishing gradients at extreme values.
+Tanh: f(x) = (e^x - e^-x)/(e^x + e^-x). Zero-centered, range (-1,1). Still suffers vanishing gradient at extremes.
+
+4. Gradient Descent Variants:
+Batch Gradient Descent: Uses entire dataset per update. Stable but very slow for large datasets.
+Stochastic Gradient Descent (SGD): Updates per single sample. Fast but noisy oscillations.
+Mini-batch Gradient Descent: Uses small batches (32, 64, 128 samples). Balances stability and efficiency.
+Adam Optimizer: Adaptive learning rates using exponentially decaying averages of past gradients (first moment) and squared gradients (second moment).
